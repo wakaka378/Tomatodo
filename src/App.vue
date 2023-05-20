@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+// import { ElButton } from 'element-plus'
+import HelloWorld from "./components/HelloWorld.vue";
 </script>
 
 <template>
@@ -12,6 +13,7 @@ import HelloWorld from './components/HelloWorld.vue'
     </a>
   </div>
   <HelloWorld msg="Vite + Vue" />
+  <el-button>我是 ElButton</el-button>
 </template>
 
 <style scoped>
