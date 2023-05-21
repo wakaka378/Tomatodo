@@ -1,5 +1,6 @@
 <script setup lang="ts">
 // import { ElButton } from 'element-plus'
+console.log('123')
 </script>
 <template>
   <div id="main">
