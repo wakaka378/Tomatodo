@@ -2,6 +2,7 @@
 // import { ElButton } from 'element-plus'
 </script>
 <template>
+  <router-view />
   <div id="main">
     <!-- 顶部 -->
 
