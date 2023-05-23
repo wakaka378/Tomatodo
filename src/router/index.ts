@@ -1,6 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import type { RouteRecordRaw } from 'vue-router'
-const routers: Array<RouteRecordRaw> = [
+const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'home',
@@ -8,6 +8,6 @@ const routers: Array<RouteRecordRaw> = [
   },
 ]
 
-const router = createRouter({ history: createWebHashHistory(import.meta.env.BASE_URL), routers })
+const router = createRouter({ history: createWebHashHistory(import.meta.env.BASE_URL), routes })
 
 export default router
