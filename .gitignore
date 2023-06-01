@@ -11,12 +11,13 @@ node_modules
 .DS_Store
 dist
 dist-ssr
+dist-electron/*
 coverage
 *.local
 release
 /cypress/videos/
 /cypress/screenshots/
-
+electron
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
