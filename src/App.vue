@@ -1,6 +1,13 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+import { ipcRenderer } from 'electron'
+const send = () => {
+  ipcRenderer.send('sendMsg', '泰裤辣')
+}
+ipcRenderer.on('mainMsg', (_, value) => {
+  console.log('app.vue msg', value)
+})
 </script>
 
 <template>
@@ -16,12 +23,7 @@ import HelloWorld from './components/HelloWorld.vue'
       </nav>
 
       <el-row class="mb-4">
-        <el-button>Default</el-button>
-        <el-button type="primary">Primary</el-button>
-        <el-button type="success">Success</el-button>
-        <el-button type="info">Info</el-button>
-        <el-button type="warning">Warning</el-button>
-        <el-button type="danger">Danger</el-button>
+        <el-button @click="send">send msg</el-button>
       </el-row>
     </div>
   </header>
