@@ -11,8 +11,8 @@
     "test:unit": "vitest",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "format": "prettier --write src/",
+    "lint": "eslint --fix src electron  && npm run format",
+    "format": "prettier --write src/ electron/",
     "prepare": "husky install",
     "commit": "cz"
   },
@@ -55,7 +55,7 @@
     "vue-tsc": "^1.6.4"
   },
   "lint-staged": {
-    "*.{js,ts,vue,jsx.tsx}": "eslint --fix"
+    "*.{js,ts,vue,jsx.tsx}": "npm run lint"
   },
   "config": {
     "commitizen": {

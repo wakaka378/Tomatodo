@@ -1,5 +1,4 @@
 import { app, BrowserWindow, ipcMain } from 'electron'
-import path from 'path'
 //app 控制应用程序的事件生命周期。
 //BrowserWindow 创建并控制浏览器窗口。
 
@@ -13,7 +12,6 @@ const createWindow = () => {
       devTools: true,
       contextIsolation: false,
       nodeIntegration: true,
-      //允许html页面上的javascipt代码访问nodejs 环境api代码的能力（与node集成的意思）
     },
   })
 
