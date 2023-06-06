@@ -1,9 +1,9 @@
 <template>
   <div class="countdown-box">
-    <div>
+    <div class="countdown-progress">
       <el-progress
         type="circle"
-        width="200"
+        width="230"
         stroke-width="5"
         :percentage="percentage"
         :indeterminate="true"
@@ -11,10 +11,11 @@
         color="#e35656"
         :show-text="false"
       ></el-progress>
+      <!-- 倒计时 -->
+      <div class="countdown-stopwatch">
+        <HomeStopwatch :countdownTime="countdownTime" ref="homeStopwatchRef" @on-done="onDone" @on-change="onChange" />
+      </div>
     </div>
-
-    <!-- 倒计时 -->
-    <HomeStopwatch :countdownTime="countdownTime" ref="homeStopwatchRef" @on-done="onDone" @on-change="onChange" />
 
     <!-- 结束任务 -->
     <el-button @click="cancelTask">点击打开 Message Box</el-button>
@@ -110,5 +111,17 @@ function cancelTask() {
   width: 100%;
   height: 500px;
   padding: 10px 0px;
+  .countdown-progress {
+    position: relative;
+    .countdown-stopwatch {
+      width: 100%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+
+      text-align: center;
+    }
+  }
 }
 </style>

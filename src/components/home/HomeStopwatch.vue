@@ -1,7 +1,7 @@
 <template>
   <div class="stopwatch">
     <span>{{ formatTime(minutes) }}</span>
-    ：
+    <span class="stopwatch-split">:</span>
     <span>{{ formatTime(seconds) }}</span>
   </div>
 </template>
@@ -73,4 +73,15 @@ defineExpose({
 })
 </script>
 
-<style scoped></style>
+<style scoped lang="scss">
+.stopwatch {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-size: 36px;
+  color: #e35656;
+  .stopwatch-split {
+    margin: 0 20px;
+  }
+}
+</style>
