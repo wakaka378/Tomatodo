@@ -14,7 +14,14 @@ import 'normalize.css'
 // icon
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 
+// svg
+import SvgIcon from '@/components/svgIcon/Index.vue'
+import 'virtual:svg-icons-register'
+
 const app = createApp(App)
+
+// 全局组件挂载svg
+app.component('svg-icon', SvgIcon)
 
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
   app.component(key, component)

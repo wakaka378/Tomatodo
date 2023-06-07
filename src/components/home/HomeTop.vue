@@ -1,6 +1,6 @@
 <template>
   <div class="top-box">
-    <div class="top-icon">
+    <div class="top-icon" style="font-size: 34px">
       <el-icon color="#67C23A"><CircleCheck /></el-icon>
     </div>
     <div class="top-task-input">
@@ -8,7 +8,7 @@
     </div>
     <el-dropdown trigger="click" placement="bottom-end" @command="handleCommand">
       <div class="top-icon">
-        <el-icon color="#c8c9cc" size="18"><DCaret /></el-icon>
+        <el-icon color="#929293" size="18"><DCaret /></el-icon>
       </div>
       <template #dropdown>
         <el-dropdown-menu>
@@ -36,18 +36,19 @@ function handleCommand(command: string | number | object) {
 .top-box {
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
   height: 50px;
-  padding: 15px;
+  padding: 10px;
 
   .top-icon {
     height: 28px;
     font-size: 28px;
     cursor: pointer;
+    opacity: 0.6;
+
     &:hover {
-      .el-icon {
-        opacity: 0.8;
-      }
+      opacity: 1;
     }
   }
 

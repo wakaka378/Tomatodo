@@ -15,12 +15,22 @@
       <div class="countdown-stopwatch">
         <HomeStopwatch :countdownTime="countdownTime" ref="homeStopwatchRef" @on-done="onDone" @on-change="onChange" />
       </div>
-    </div>
 
-    <!-- 结束任务 -->
-    <el-button @click="cancelTask">点击打开 Message Box</el-button>
-    <!-- 开始或者暂停 -->
-    <span @click="startOrPause">start</span>
+      <!-- 开始或者暂停 -->
+      <div @click="startOrPause" class="countdown-operation">
+        <svg-icon
+          :class-name="isTimed ? '' : 'countdown-icon'"
+          :icon-class="isTimed ? 'pause' : 'triangle'"
+          color="#e35656"
+          width="45"
+        />
+      </div>
+      <!-- 结束任务 -->
+
+      <div class="countdown-close" @click="cancelTask">
+        <el-icon color="#929293"><CircleClose /></el-icon>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -36,12 +46,12 @@ let countdownTime = 1
 const homeStopwatchRef = ref<InstanceType<typeof HomeStopwatch>>()
 
 // 是否已计时
-let isTimed = false
+let isTimed = ref(false)
 // 开始计时或者暂停
 function startOrPause() {
-  isTimed = !isTimed
+  isTimed.value = !isTimed.value
   console.log('isTimed', isTimed)
-  if (isTimed) {
+  if (isTimed.value) {
     homeStopwatchRef.value?.start()
   } else {
     homeStopwatchRef.value?.pause()
@@ -61,7 +71,7 @@ homeStopwatchRef.value?.stop()
 // 秒表计时完成
 function onDone() {
   // 修改状态
-  isTimed = false
+  isTimed.value = false
 
   // 进度条空
   percentage.value = 0
@@ -117,10 +127,33 @@ function cancelTask() {
       width: 100%;
       position: absolute;
       left: 50%;
-      top: 50%;
+      top: 47%;
       transform: translate(-50%, -50%);
 
       text-align: center;
+    }
+    .countdown-operation {
+      position: absolute;
+      left: 50%;
+      top: 72%;
+      transform: translate(-50%, -50%);
+      .countdown-icon {
+        transform: rotate(90deg);
+      }
+    }
+
+    .countdown-close {
+      position: absolute;
+      right: -40px;
+      top: -20px;
+      height: 28px;
+      font-size: 28px;
+      cursor: pointer;
+      opacity: 0.6;
+
+      &:hover {
+        opacity: 1;
+      }
     }
   }
 }
