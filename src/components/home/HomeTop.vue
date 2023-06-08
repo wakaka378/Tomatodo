@@ -1,12 +1,12 @@
 <template>
   <div class="top-box">
-    <div class="top-icon" style="font-size: 34px">
-      <el-icon color="#67C23A"><CircleCheck /></el-icon>
+    <div class="icon-button">
+      <el-icon color="#67C23A" size="34"><CircleCheck /></el-icon>
     </div>
     <dblclickSpan2Input v-model="taskTitle"></dblclickSpan2Input>
     <el-dropdown trigger="click" placement="bottom-end" @command="handleCommand">
-      <div class="top-icon">
-        <el-icon color="#929293" size="18"><DCaret /></el-icon>
+      <div class="icon-button">
+        <el-icon color="#909399" size="20"><DCaret /></el-icon>
       </div>
       <template #dropdown>
         <el-dropdown-menu>
@@ -38,17 +38,6 @@ function handleCommand(command: string | number | object) {
   justify-content: space-between;
   height: 50px;
   padding: 10px;
-
-  .top-icon {
-    height: 30px;
-    font-size: 30px;
-    cursor: pointer;
-    opacity: 0.6;
-
-    &:hover {
-      opacity: 1;
-    }
-  }
 }
 .top-task-title {
   width: 200px;

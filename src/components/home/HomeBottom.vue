@@ -1,14 +1,13 @@
 <template>
   <div class="home-botton">
-    <el-icon><MoreFilled /></el-icon>
-
-    <div>
+    <svg-icon class-name="list" icon-class="list" color="#909399" width="25" />
+    <div class="home-botton-today">
       <span>ToDay</span>
       <span>{{ doneNum }}</span>
       /
       <span>{{ countNum }}</span>
     </div>
-    <el-icon><Setting /></el-icon>
+    <el-icon class="icon-button" size="25" color="#909399"><Setting /></el-icon>
   </div>
 </template>
 
@@ -24,5 +23,14 @@ let countNum = 0
   justify-content: space-between;
   align-items: center;
   padding: 15px;
+  .home-botton-today {
+    font-size: 24px;
+    color: #606266;
+    span {
+      &:first-child {
+        margin-right: 5px;
+      }
+    }
+  }
 }
 </style>

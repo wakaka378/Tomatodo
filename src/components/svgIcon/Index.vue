@@ -8,7 +8,7 @@
     preserveAspectRatio="none meet"
     cursor="pointer"
   >
-    <use class="svgClassUse" :xlink:href="iconName" :color="color" width="100%" height="100%" />
+    <use class="svgClassUse" :xlink:href="iconName" :stroke="color" :color="color" width="100%" height="100%" />
   </svg>
 </template>
 
@@ -47,8 +47,11 @@ const svgClass = computed(() => {
 
 <style lang="scss" scoped>
 .svg-default {
+  opacity: 0.8;
+
   &:hover {
-    opacity: 0.8;
+    opacity: 1;
+
     color: antiquewhite;
   }
 }

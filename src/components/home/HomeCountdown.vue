@@ -3,8 +3,8 @@
     <div class="countdown-progress">
       <el-progress
         type="circle"
-        width="230"
-        stroke-width="5"
+        width="250"
+        stroke-width="7"
         :percentage="percentage"
         :indeterminate="true"
         :text-inside="false"

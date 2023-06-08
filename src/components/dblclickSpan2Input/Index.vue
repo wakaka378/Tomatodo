@@ -1,6 +1,5 @@
 <template>
   <div class="dblclick-span-box">
-    <!-- <el-input v-model="taskTitle" :readonly="readonly" @dblclick="dbevent" @change="blur" /> -->
     <span @dblclick="onDblclick">{{ modelValue }}</span>
   </div>
 </template>
