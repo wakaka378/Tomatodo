@@ -3,9 +3,7 @@
     <div class="top-icon" style="font-size: 34px">
       <el-icon color="#67C23A"><CircleCheck /></el-icon>
     </div>
-    <div class="top-task-input">
-      <el-input v-model="taskTitle" />
-    </div>
+    <dblclickSpan2Input v-model="taskTitle"></dblclickSpan2Input>
     <el-dropdown trigger="click" placement="bottom-end" @command="handleCommand">
       <div class="top-icon">
         <el-icon color="#929293" size="18"><DCaret /></el-icon>
@@ -23,8 +21,8 @@
 </template>
 
 <script setup lang="ts">
+import dblclickSpan2Input from '@/components/dblclickSpan2Input/Index.vue'
 import { ref } from 'vue'
-
 const taskTitle = ref('task 1')
 
 function handleCommand(command: string | number | object) {
@@ -42,8 +40,8 @@ function handleCommand(command: string | number | object) {
   padding: 10px;
 
   .top-icon {
-    height: 28px;
-    font-size: 28px;
+    height: 30px;
+    font-size: 30px;
     cursor: pointer;
     opacity: 0.6;
 
@@ -51,22 +49,9 @@ function handleCommand(command: string | number | object) {
       opacity: 1;
     }
   }
-
-  .top-task-input {
-    flex: 0.6;
-    :deep input {
-      font-size: 22px;
-      text-align: center;
-    }
-    :deep .el-input {
-      .el-input__wrapper {
-        box-shadow: none;
-      }
-    }
-  }
 }
-:deep .top-task-title {
-  width: 150px;
+.top-task-title {
+  width: 200px;
   // &:hover {
   //   // background-color: #409eff;
   // }
